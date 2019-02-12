@@ -9,7 +9,7 @@ LABEL maintainer="Alberto Gimeno <gimenete@gmail.com>"
 
 ENV PATH=$PATH:/app/node_modules/.bin
 
-COPY . .
+COPY . /app
 
 RUN npm install --production
 RUN ls /app

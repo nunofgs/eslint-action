@@ -10,8 +10,10 @@ const processManager = require('process-manager');
 
 module.exports = app => {
   app.on('push', async context => {
-    // A new issue was opened, what should we do with it?
-    context.log(context.payload)
+    context.log(context.payload);
+
+    const check_run_id = context.payload.checks.find(({ name }) => name === event.name);
+    const foo = await context.github.checks.get({ check_run_id });
 
     // const params = context.issue({ body: 'Hello World!' })
     //
