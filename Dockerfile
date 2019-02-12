@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM node:10
 
 LABEL com.github.actions.name="ESLint checks"
 LABEL com.github.actions.description="Lint your code with eslint in parallel to your builds"
@@ -12,5 +12,7 @@ ENV PATH=$PATH:/app/node_modules/.bin
 COPY . .
 
 RUN npm install --production
+RUN ls /app
+RUN ls /app/src
 
 CMD ["/app/src/index.js"]
