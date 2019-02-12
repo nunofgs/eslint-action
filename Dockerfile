@@ -7,5 +7,10 @@ LABEL com.github.actions.color="yellow"
 
 LABEL maintainer="Alberto Gimeno <gimenete@gmail.com>"
 
-COPY lib /action/lib
-ENTRYPOINT ["/action/lib/entrypoint.sh"]
+ENV PATH=$PATH:/app/node_modules/.bin
+
+COPY . .
+
+RUN npm install --production
+
+CMD ["/app/src/index.js"]
