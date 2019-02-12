@@ -3,7 +3,8 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": "git@github.com:gimeneteZ/eslint-action.git",
   "dependencies": {
-    "@uphold/process-manager": "^2.0.1",
-    "node-fetch": "^2.3.0"
+    "@octokit/rest": "^16.15.0",
+    "node-fetch": "^2.3.0",
+    "probot": "^7.5.0"
   }
 }
